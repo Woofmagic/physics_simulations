@@ -1,0 +1,413 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 13.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     15570,        405]
+NotebookOptionsPosition[     11622,        333]
+NotebookOutlinePosition[     12019,        349]
+CellTagsIndexPosition[     11976,        346]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["FeynCalc Tutorials", "Title",
+ CellChangeTimes->{{3.938182793838819*^9, 
+  3.938182798352594*^9}},ExpressionUUID->"c6d126ad-7eb4-45fd-96f0-\
+91b1ce5616da"],
+
+Cell["In this notebook, we try to learn and understand FeynCalc.", "Subtitle",
+ CellChangeTimes->{{3.938182800676869*^9, 
+  3.938182833155672*^9}},ExpressionUUID->"df037127-ee51-45c6-a3d9-\
+d39a04a64be9"],
+
+Cell[CellGroupData[{
+
+Cell["(#1): Useful Information:", "Chapter",
+ CellChangeTimes->{{3.938182836185876*^9, 
+  3.938182847290738*^9}},ExpressionUUID->"34da7951-1f4e-46c1-a200-\
+900cf8aa4494"],
+
+Cell[CellGroupData[{
+
+Cell["(#1.1): Installation:", "Section",
+ CellChangeTimes->{{3.9381828519743767`*^9, 
+  3.9381828569714193`*^9}},ExpressionUUID->"91d47923-bb39-46a4-aed0-\
+d0f9f78e2042"],
+
+Cell["\<\
+There are two main ways to install FeynCalc. The first way is to utilize \
+Mathematica\[CloseCurlyQuote]s Import[] function and apparently install it \
+over the internet. The second way is the cooler way: manual installation.\
+\>", "Text",
+ CellChangeTimes->{{3.93818286285425*^9, 
+  3.938182919043017*^9}},ExpressionUUID->"c08841e4-fbf7-4573-8637-\
+b67d53def5d3"],
+
+Cell[CellGroupData[{
+
+Cell["(#1.1.1): Installation via HTTPS:", "Subsection",
+ CellChangeTimes->{{3.938182924309029*^9, 
+  3.938182932600527*^9}},ExpressionUUID->"50e117e0-b09e-4aa7-9a7b-\
+4d220eeb8e9e"],
+
+Cell[BoxData[
+ RowBox[{"\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{
+   "URLForFeynCalcRepository", "=", 
+    "\"\<https://raw.githubusercontent.com/FeynCalc/feyncalc/master/install.m\
+\>\""}], ";"}]}]], "Input",
+ CellChangeTimes->{{3.938182938299817*^9, 3.938182974378384*^9}},
+ CellLabel->"In[4]:=",ExpressionUUID->"75472c0f-a23d-4a00-af96-df999bdf856f"],
+
+Cell[BoxData[
+ RowBox[{"Import", "[", "URLForFeynCalcRepository", "]"}]], "Input",
+ CellChangeTimes->{{3.938183180903338*^9, 
+  3.938183181030374*^9}},ExpressionUUID->"560c36f8-11ff-4f78-9544-\
+3ddbe88dff20"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"InstallFeynCalc", "[", 
+  RowBox[{"InstallFeynCalcDevelopmentVersion", "->", "True"}], "]"}]], "Input",\
+ExpressionUUID->"944c5189-59f1-4a9d-9f04-e766d522bafe"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "InstallFeynCalc", "shdw", 
+   "\"Symbol \\!\\(\\*RowBox[{\\\"\\\\\\\"InstallFeynCalc\\\\\\\"\\\"}]\\) \
+appears in multiple contexts \\!\\(\\*RowBox[{\\\"{\\\", \
+RowBox[{\\\"\\\\\\\"FeynCalcInstaller`\\\\\\\"\\\", \\\",\\\", \
+\\\"\\\\\\\"Global`\\\\\\\"\\\"}], \\\"}\\\"}]\\); definitions in context \\!\
+\\(\\*RowBox[{\\\"\\\\\\\"FeynCalcInstaller`\\\\\\\"\\\"}]\\) may shadow or \
+be shadowed by other definitions.\"", 2, 5, 2, 31148757021901540942, "Local", 
+   "FeynCalcInstaller`InstallFeynCalc"},
+  "MessageTemplate2"]], "Message", "MSG",
+ CellChangeTimes->{3.9381829766351852`*^9},
+ CellLabel->
+  "During evaluation of \
+In[5]:=",ExpressionUUID->"66673274-5961-4411-8436-9081f3bc4679"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "InstallFeynCalcDevelopmentVersion", "shdw", 
+   "\"Symbol \\!\\(\\*RowBox[{\\\"\\\\\\\"InstallFeynCalcDevelopmentVersion\\\
+\\\\\"\\\"}]\\) appears in multiple contexts \\!\\(\\*RowBox[{\\\"{\\\", \
+RowBox[{\\\"\\\\\\\"FeynCalcInstaller`\\\\\\\"\\\", \\\",\\\", \
+\\\"\\\\\\\"Global`\\\\\\\"\\\"}], \\\"}\\\"}]\\); definitions in context \\!\
+\\(\\*RowBox[{\\\"\\\\\\\"FeynCalcInstaller`\\\\\\\"\\\"}]\\) may shadow or \
+be shadowed by other definitions.\"", 2, 5, 3, 31148757021901540942, "Local", 
+   "FeynCalcInstaller`InstallFeynCalcDevelopmentVersion"},
+  "MessageTemplate2"]], "Message", "MSG",
+ CellChangeTimes->{3.938182976676291*^9},
+ CellLabel->
+  "During evaluation of \
+In[5]:=",ExpressionUUID->"8991ad0d-bbfe-4b9b-af99-4b15c12442a5"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData["\<\"Welcome to the automatic FeynCalc installer brought to you \
+by the FeynCalc developer team!\"\>"], "Print",
+ CellChangeTimes->{3.938182976997972*^9},
+ CellLabel->
+  "During evaluation of \
+In[5]:=",ExpressionUUID->"49e23fd0-c36e-41df-aa50-2f638eb7f5ac"],
+
+Cell[BoxData["\<\" \[Bullet] To install the current stable version of \
+FeynCalc (recommended for productive use), please evaluate\"\>"], "Print",
+ CellChangeTimes->{3.9381829770020647`*^9},
+ CellLabel->
+  "During evaluation of \
+In[5]:=",ExpressionUUID->"2fcee088-4eef-47a3-b5cf-4aa335376c57"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"\\t\"\>", "\[InvisibleSpace]", 
+   InterpretationBox[Cell[
+    "InstallFeynCalc[]", "Code",ExpressionUUID->
+     "97700b2e-cc9d-40ca-bdb1-f963f2c4fb51"],
+    TextCell["InstallFeynCalc[]", "Code"]]}],
+  SequenceForm["\t", 
+   TextCell["InstallFeynCalc[]", "Code"]],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.93818297700393*^9},
+ CellLabel->
+  "During evaluation of \
+In[5]:=",ExpressionUUID->"cafc6319-03ed-4c08-a269-8157e716936f"],
+
+Cell[BoxData["\<\" \[Bullet] To install the development version of FeynCalc \
+(only for experts or beta testers), please evaluate \"\>"], "Print",
+ CellChangeTimes->{3.938182977011405*^9},
+ CellLabel->
+  "During evaluation of \
+In[5]:=",ExpressionUUID->"9dbabc74-0cc3-48a5-8397-d29650584cd6"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"\\t\"\>", "\[InvisibleSpace]", 
+   InterpretationBox[Cell[
+    "InstallFeynCalc[InstallFeynCalcDevelopmentVersion->True]", "Code",
+     ExpressionUUID->"f6b179b7-4077-466d-8dce-65597632e7ca"],
+    TextCell[
+    "InstallFeynCalc[InstallFeynCalcDevelopmentVersion->True]", "Code"]]}],
+  SequenceForm["\t", 
+   TextCell[
+   "InstallFeynCalc[InstallFeynCalcDevelopmentVersion->True]", "Code"]],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.938182977012312*^9},
+ CellLabel->
+  "During evaluation of \
+In[5]:=",ExpressionUUID->"075416fa-38fd-4027-9cbb-a5027297a3fb"]
+}, Open  ]],
+
+Cell[BoxData["$Aborted"], "Output",
+ CellChangeTimes->{3.938183047598646*^9},
+ CellLabel->"Out[6]=",ExpressionUUID->"545ca617-63aa-426b-9903-c931d5a262d9"]
+}, Open  ]],
+
+Cell["\<\
+You should be careful if you already have FeynCalc installed: it will query \
+you to overwrite the existing installation! You can choose to proceed with \
+overwriting or not.\
+\>", "Text",
+ CellChangeTimes->{{3.938182992575646*^9, 
+  3.9381830887839727`*^9}},ExpressionUUID->"1e21df4b-140b-46f1-be82-\
+6d761b43e0a6"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["(#1.1.2): Manual Installation:", "Subsection",
+ CellChangeTimes->{{3.938183090781619*^9, 
+  3.9381830991520767`*^9}},ExpressionUUID->"0933c60b-cce3-452e-90b3-\
+768af279942a"],
+
+Cell["\<\
+Since we already have it installed, we don' t need to do anything jank like \
+query a URL and download it in the actual notebook. Also, the documentation \
+for how to do manual installation is *excellent*, so just read that.\
+\>", "Text",
+ CellChangeTimes->{{3.938183103974341*^9, 
+  3.938183125194766*^9}},ExpressionUUID->"b10e02ad-a2bf-4139-94bd-\
+8ef187b9c745"],
+
+Cell[BoxData[""], "Input",
+ CellChangeTimes->{{3.938183016690683*^9, 
+  3.9381830179439898`*^9}},ExpressionUUID->"fc44d378-8f0f-4c60-9602-\
+7747c05094f3"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["(#1.2): Loading FeynCalc", "Section",
+ CellChangeTimes->{{3.938183193914502*^9, 
+  3.938183201439012*^9}},ExpressionUUID->"f5d708e7-dbe6-493a-8331-\
+4f14772d1686"],
+
+Cell[CellGroupData[{
+
+Cell["(#1.2.1): Loading FeynCalc:", "Subsection",
+ CellChangeTimes->{{3.938183203898911*^9, 
+  3.938183212029883*^9}},ExpressionUUID->"cd364fb3-4d19-4c7b-bb79-\
+408d1c038cb3"],
+
+Cell["\<\
+To load FeynCalc, use that weird Mathematica syntax to load the package. We \
+will not \
+\>", "Text",
+ CellChangeTimes->{{3.9381832132649*^9, 
+  3.938183250238*^9}},ExpressionUUID->"fb944b16-6e91-4273-b320-96b697e2175c"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["(#1.2.2): Add-ons:", "Subsection",
+ CellChangeTimes->{{3.938183236749743*^9, 
+  3.938183259831669*^9}},ExpressionUUID->"53133420-589b-4814-a1ab-\
+99a9e7a6aba0"],
+
+Cell["\<\
+A little unusually, add-ons to FeynCalc come in the form of *strings* that \
+you need to spell correctly and then tack on to the global variable \
+$LoadAddOns. Then, *after* you have done that should you load FeynCalc. Let\
+\[CloseCurlyQuote]s try to add two real add-ons and then some bogus ones to \
+see what happens.\
+\>", "Text",
+ CellChangeTimes->{{3.938183262457738*^9, 
+  3.938183370134273*^9}},ExpressionUUID->"6289402f-2aae-47a1-b2e2-\
+1ac96030467b"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"$LoadAddOns", "=", 
+  RowBox[{"{", 
+   RowBox[{
+   "\"\<FeynArts\>\"", ",", " ", "\"\<FeynHelpers\>\"", ",", " ", 
+    "\"\<hell\>\"", ",", " ", "\"\<shit\>\""}], 
+   "}"}]}], "\[IndentingNewLine]", 
+ RowBox[{"<<", "FeynCalc`"}]}], "Input",
+ CellChangeTimes->{{3.938183273576*^9, 3.9381832737163973`*^9}, {
+  3.938183327686637*^9, 3.938183340161367*^9}, {3.93818337781712*^9, 
+  3.938183395369918*^9}},
+ CellLabel->"In[9]:=",ExpressionUUID->"4c5f83e0-6d5e-4e81-b6cc-b3945152ff97"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"\<\"FeynArts\"\>", ",", "\<\"FeynHelpers\"\>", ",", "\<\"hell\"\>",
+    ",", "\<\"shit\"\>"}], "}"}]], "Output",
+ CellChangeTimes->{3.938183340822816*^9, 3.9381833957137547`*^9},
+ CellLabel->"Out[9]=",ExpressionUUID->"5bc1bbaa-04b5-4c36-9226-5aa0b47a8931"],
+
+Cell[BoxData[
+ StyleBox["\<\"FeynCalc is already loaded! If you are trying to reload \
+FeynCalc or load FeynArts, TARCER, PHI, FeynHelpers or any other add-on, \
+please restart the kernel.\"\>", "Text",
+  StripOnInput->False,
+  LineColor->RGBColor[1, 0, 0],
+  FrontFaceColor->RGBColor[1, 0, 0],
+  BackFaceColor->RGBColor[1, 0, 0],
+  GraphicsColor->RGBColor[1, 0, 0],
+  FontWeight->Bold,
+  FontColor->RGBColor[1, 0, 0]]], "Print",
+ CellChangeTimes->{3.938183342315219*^9, 3.9381833957162857`*^9},
+ CellLabel->
+  "During evaluation of \
+In[9]:=",ExpressionUUID->"a53f5d51-f2a3-4b42-b7b1-9f24cc7d0685"],
+
+Cell[BoxData["$Aborted"], "Output",
+ CellChangeTimes->{3.938183340822816*^9, 3.938183395719892*^9},
+ CellLabel->"Out[10]=",ExpressionUUID->"0dbf657b-1579-4558-8ef3-046c1373db34"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["(#1.2.3): Startup Messages:", "Subsection",
+ CellChangeTimes->{{3.93818340782329*^9, 
+  3.938183417153572*^9}},ExpressionUUID->"066f628d-797f-472f-bca0-\
+fbbb88919e97"],
+
+Cell["\<\
+Additionally, we can choose to suppress the startup messages *before \
+initializing* (again). Why is it like this? Who knows? The directive to \
+suppress startup messages must be essentially memorized, and comes in the \
+form of:\
+\>", "Text",
+ CellChangeTimes->{{3.938183419259273*^9, 
+  3.938183471983529*^9}},ExpressionUUID->"66780ecf-8a84-476a-adec-\
+6745f96598db"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"$FeynCalcStartupMessages", "=", "False"}], ";"}]], "Input",
+ CellChangeTimes->{{3.938183475182987*^9, 
+  3.9381834751837997`*^9}},ExpressionUUID->"7e7db71d-946f-4174-bcf0-\
+e68fe618eee1"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+
+Cell["(#2): Tutorials:", "Chapter",
+ CellChangeTimes->{{3.938183707625228*^9, 
+  3.938183712073675*^9}},ExpressionUUID->"cfb32e8e-074f-48d9-8db8-\
+2c6a67f561cb"],
+
+Cell["(#3): Basic Objects:", "Chapter",
+ CellChangeTimes->{{3.938183712908968*^9, 
+  3.93818372093788*^9}},ExpressionUUID->"f713b345-7d32-45ee-b1e9-\
+6bd58b2bc8b8"]
+}, Open  ]]
+},
+WindowSize->{606, 683.25},
+WindowMargins->{{Automatic, -651}, {Automatic, 6.75}},
+FrontEndVersion->"13.3 for Linux x86 (64-bit) (July 24, 2023)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"dadf068e-eae9-4340-a34c-ecc8bd9771ab"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 161, 3, 98, "Title",ExpressionUUID->"c6d126ad-7eb4-45fd-96f0-91b1ce5616da"],
+Cell[744, 27, 204, 3, 85, "Subtitle",ExpressionUUID->"df037127-ee51-45c6-a3d9-d39a04a64be9"],
+Cell[CellGroupData[{
+Cell[973, 34, 170, 3, 69, "Chapter",ExpressionUUID->"34da7951-1f4e-46c1-a200-900cf8aa4494"],
+Cell[CellGroupData[{
+Cell[1168, 41, 170, 3, 67, "Section",ExpressionUUID->"91d47923-bb39-46a4-aed0-d0f9f78e2042"],
+Cell[1341, 46, 374, 7, 81, "Text",ExpressionUUID->"c08841e4-fbf7-4573-8637-b67d53def5d3"],
+Cell[CellGroupData[{
+Cell[1740, 57, 181, 3, 54, "Subsection",ExpressionUUID->"50e117e0-b09e-4aa7-9a7b-4d220eeb8e9e"],
+Cell[1924, 62, 357, 8, 90, "Input",ExpressionUUID->"75472c0f-a23d-4a00-af96-df999bdf856f"],
+Cell[2284, 72, 208, 4, 29, "Input",ExpressionUUID->"560c36f8-11ff-4f78-9544-3ddbe88dff20"],
+Cell[CellGroupData[{
+Cell[2517, 80, 184, 3, 29, "Input",ExpressionUUID->"944c5189-59f1-4a9d-9f04-e766d522bafe"],
+Cell[2704, 85, 726, 14, 62, "Message",ExpressionUUID->"66673274-5961-4411-8436-9081f3bc4679"],
+Cell[3433, 101, 778, 14, 79, "Message",ExpressionUUID->"8991ad0d-bbfe-4b9b-af99-4b15c12442a5"],
+Cell[CellGroupData[{
+Cell[4236, 119, 272, 5, 42, "Print",ExpressionUUID->"49e23fd0-c36e-41df-aa50-2f638eb7f5ac"],
+Cell[4511, 126, 294, 5, 42, "Print",ExpressionUUID->"2fcee088-4eef-47a3-b5cf-4aa335376c57"],
+Cell[4808, 133, 488, 13, 26, "Print",ExpressionUUID->"cafc6319-03ed-4c08-a269-8157e716936f"],
+Cell[5299, 148, 292, 5, 42, "Print",ExpressionUUID->"9dbabc74-0cc3-48a5-8397-d29650584cd6"],
+Cell[5594, 155, 615, 15, 26, "Print",ExpressionUUID->"075416fa-38fd-4027-9cbb-a5027297a3fb"]
+}, Open  ]],
+Cell[6224, 173, 155, 2, 33, "Output",ExpressionUUID->"545ca617-63aa-426b-9903-c931d5a262d9"]
+}, Open  ]],
+Cell[6394, 178, 326, 7, 81, "Text",ExpressionUUID->"1e21df4b-140b-46f1-be82-6d761b43e0a6"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[6757, 190, 180, 3, 54, "Subsection",ExpressionUUID->"0933c60b-cce3-452e-90b3-768af279942a"],
+Cell[6940, 195, 374, 7, 104, "Text",ExpressionUUID->"b10e02ad-a2bf-4139-94bd-8ef187b9c745"],
+Cell[7317, 204, 154, 3, 29, "Input",ExpressionUUID->"fc44d378-8f0f-4c60-9602-7747c05094f3"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[7520, 213, 169, 3, 67, "Section",ExpressionUUID->"f5d708e7-dbe6-493a-8331-4f14772d1686"],
+Cell[CellGroupData[{
+Cell[7714, 220, 175, 3, 54, "Subsection",ExpressionUUID->"cd364fb3-4d19-4c7b-bb79-408d1c038cb3"],
+Cell[7892, 225, 230, 5, 58, "Text",ExpressionUUID->"fb944b16-6e91-4273-b320-96b697e2175c"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[8159, 235, 166, 3, 54, "Subsection",ExpressionUUID->"53133420-589b-4814-a1ab-99a9e7a6aba0"],
+Cell[8328, 240, 469, 9, 127, "Text",ExpressionUUID->"6289402f-2aae-47a1-b2e2-1ac96030467b"],
+Cell[CellGroupData[{
+Cell[8822, 253, 505, 11, 52, "Input",ExpressionUUID->"4c5f83e0-6d5e-4e81-b6cc-b3945152ff97"],
+Cell[9330, 266, 296, 5, 33, "Output",ExpressionUUID->"5bc1bbaa-04b5-4c36-9226-5aa0b47a8931"],
+Cell[9629, 273, 599, 14, 71, "Print",ExpressionUUID->"a53f5d51-f2a3-4b42-b7b1-9f24cc7d0685"],
+Cell[10231, 289, 178, 2, 33, "Output",ExpressionUUID->"0dbf657b-1579-4558-8ef3-046c1373db34"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[10458, 297, 174, 3, 54, "Subsection",ExpressionUUID->"066f628d-797f-472f-bca0-fbbb88919e97"],
+Cell[10635, 302, 379, 8, 104, "Text",ExpressionUUID->"66780ecf-8a84-476a-adec-6745f96598db"],
+Cell[11017, 312, 222, 5, 29, "Input",ExpressionUUID->"7e7db71d-946f-4174-bcf0-e68fe618eee1"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+Cell[11278, 322, 161, 3, 69, "Chapter",ExpressionUUID->"cfb32e8e-074f-48d9-8db8-2c6a67f561cb"],
+Cell[11442, 327, 164, 3, 58, "Chapter",ExpressionUUID->"f713b345-7d32-45ee-b1e9-6bd58b2bc8b8"]
+}, Open  ]]
+}
+]
+*)
+
