@@ -1,0 +1,1213 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 13.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     49720,       1203]
+NotebookOptionsPosition[     46100,       1129]
+NotebookOutlinePosition[     46492,       1145]
+CellTagsIndexPosition[     46449,       1142]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["(#1): Packages:", "Chapter",
+ CellChangeTimes->{
+  3.941633640365775*^9},ExpressionUUID->"1f079ffc-0dd7-4a8b-aa30-\
+19e2069d0da0"],
+
+Cell[CellGroupData[{
+
+Cell["(#1.1): FeynCalc:", "Section",
+ CellChangeTimes->{
+  3.9416336462676888`*^9},ExpressionUUID->"5f034c24-97b0-4fea-b8b6-\
+4110bd315cb3"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"<<", "FeynCalc`"}]], "Input",
+ InitializationCell->True,
+ CellLabel->"In[1]:=",ExpressionUUID->"0e701859-02c1-40dc-bc0b-59b72f6ff987"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{
+   StyleBox["\<\"FeynCalc \"\>", "Text",
+    StripOnInput->False,
+    FontWeight->Bold], "\[InvisibleSpace]", 
+   StyleBox["\<\"10.1.0 (stable version). For help, use the \"\>", "Text",
+    StripOnInput->False], "\[InvisibleSpace]", 
+   StyleBox[
+    TagBox[
+     ButtonBox[
+      RowBox[{
+       RowBox[{"online", " ", "documentation"}], ","}],
+      BaseStyle->"Hyperlink",
+      ButtonData:>{
+        URL["https://feyncalc.github.io/referenceDev"], None},
+      ButtonNote->"https://feyncalc.github.io/referenceDev"],
+     DisplayForm], "Text",
+    StripOnInput->False], "\[InvisibleSpace]", 
+   StyleBox["\<\" visit the \"\>", "Text",
+    StripOnInput->False], "\[InvisibleSpace]", 
+   StyleBox[
+    TagBox[
+     ButtonBox["forum",
+      BaseStyle->"Hyperlink",
+      ButtonData:>{
+        URL["https://github.com/FeynCalc/feyncalc/discussions"], None},
+      ButtonNote->"https://github.com/FeynCalc/feyncalc/discussions/"],
+     DisplayForm], "Text",
+    StripOnInput->False], "\[InvisibleSpace]", 
+   StyleBox["\<\" and have a look at the supplied \"\>", "Text",
+    StripOnInput->False], "\[InvisibleSpace]", 
+   StyleBox[
+    TagBox[
+     ButtonBox[
+      RowBox[{"examples", "."}],
+      BaseStyle->"Hyperlink",
+      ButtonFunction:>SystemOpen[
+        FileNameJoin[{FeynCalc`$FeynCalcDirectory, "Examples"}]],
+      Evaluator->Automatic,
+      Method->"Preemptive"],
+     DisplayForm], "Text",
+    StripOnInput->False], "\[InvisibleSpace]", 
+   StyleBox["\<\" The PDF-version of the manual can be downloaded \"\>", 
+    "Text",
+    StripOnInput->False], "\[InvisibleSpace]", 
+   StyleBox[
+    TagBox[
+     ButtonBox[
+      RowBox[{"here", "."}],
+      BaseStyle->"Hyperlink",
+      ButtonData:>{
+        URL[
+        "https://github.com/FeynCalc/feyncalc-manual/releases/download/dev-\
+manual/FeynCalcManual.pdf"], None},
+      ButtonNote->
+       "https://github.com/FeynCalc/feyncalc-manual/releases/download/dev-\
+manual/FeynCalcManual.pdf"],
+     DisplayForm], "Text",
+    StripOnInput->False]}],
+  SequenceForm[
+   Style["FeynCalc ", "Text", Bold], 
+   Style["10.1.0 (stable version). For help, use the ", "Text"], 
+   Style[
+    DisplayForm[
+     ButtonBox["online documentation,", ButtonData :> {
+        URL["https://feyncalc.github.io/referenceDev"], None}, BaseStyle -> 
+      "Hyperlink", ButtonNote -> "https://feyncalc.github.io/referenceDev"]], 
+    "Text"], 
+   Style[" visit the ", "Text"], 
+   Style[
+    DisplayForm[
+     ButtonBox["forum", ButtonData :> {
+        URL["https://github.com/FeynCalc/feyncalc/discussions"], None}, 
+      BaseStyle -> "Hyperlink", ButtonNote -> 
+      "https://github.com/FeynCalc/feyncalc/discussions/"]], "Text"], 
+   Style[" and have a look at the supplied ", "Text"], 
+   Style[
+    DisplayForm[
+     ButtonBox[
+     "examples.", BaseStyle -> "Hyperlink", ButtonFunction :> SystemOpen[
+        FileNameJoin[{FeynCalc`$FeynCalcDirectory, "Examples"}]], Evaluator -> 
+      Automatic, Method -> "Preemptive"]], "Text"], 
+   Style[" The PDF-version of the manual can be downloaded ", "Text"], 
+   Style[
+    DisplayForm[
+     ButtonBox["here.", ButtonData :> {
+        URL[
+        "https://github.com/FeynCalc/feyncalc-manual/releases/download/dev-\
+manual/FeynCalcManual.pdf"], None}, BaseStyle -> "Hyperlink", ButtonNote -> 
+      "https://github.com/FeynCalc/feyncalc-manual/releases/download/dev-\
+manual/FeynCalcManual.pdf"]], "Text"]],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.9416345989866343`*^9},
+ CellLabel->
+  "During evaluation of \
+In[1]:=",ExpressionUUID->"6f4e64a1-cdf0-4fd0-ba49-a2012b018588"],
+
+Cell[BoxData[
+ StyleBox["\<\"If you use FeynCalc in your research, please evaluate \
+FeynCalcHowToCite[] to learn how to cite this software.\"\>", "Text",
+  StripOnInput->False]], "Print",
+ CellChangeTimes->{3.941634598999094*^9},
+ CellLabel->
+  "During evaluation of \
+In[1]:=",ExpressionUUID->"6c9c6f1b-8769-4b7d-841d-f2cacd229b8c"],
+
+Cell[BoxData[
+ StyleBox["\<\"Please keep in mind that the proper academic attribution of \
+our work is crucial to ensure the future development of this package!\"\>", 
+  "Text",
+  StripOnInput->False,
+  FontSlant->Italic]], "Print",
+ CellChangeTimes->{3.941634599001129*^9},
+ CellLabel->
+  "During evaluation of \
+In[1]:=",ExpressionUUID->"47dda56e-11ac-4b4a-ab62-6fe7ae7d7ee3"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["(#2): FeynCalc Settings:", "Chapter",
+ CellChangeTimes->{{3.941634479110764*^9, 
+  3.941634482106824*^9}},ExpressionUUID->"829a86e2-479e-4171-bff3-\
+ccbc479cce33"],
+
+Cell[CellGroupData[{
+
+Cell["(#2.1): Scalar Products:", "Section",
+ CellChangeTimes->{{3.941634486142933*^9, 
+  3.9416344905286703`*^9}},ExpressionUUID->"1c9e407a-c81f-489b-8ef9-\
+de04476ef164"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"?", "Momentum"}]], "Input",
+ CellChangeTimes->{{3.941635025871942*^9, 3.9416350260473833`*^9}},
+ CellLabel->"In[23]:=",ExpressionUUID->"5446f91e-4949-44f8-858b-f0db59de37f6"],
+
+Cell[BoxData[
+ InterpretationBox[
+  StyleBox[
+   FrameBox[
+    DynamicModuleBox[{System`InformationDump`open$$ = False, 
+     System`InformationDump`mouseOver$$ = False}, 
+     PaneSelectorBox[{True->
+      TagBox[GridBox[{
+         {
+          ItemBox[
+           PaneBox[
+            StyleBox["\<\" Symbol\"\>", "InformationTitleText",
+             StripOnInput->False,
+             BaseStyle -> None],
+            FrameMargins->{{4, 0}, {-1, 1}}],
+           BaseStyle->"InformationTitleBackground",
+           StripOnInput->False], 
+          ItemBox["\<\"\"\>",
+           BaseStyle->"InformationTitleBackground",
+           StripOnInput->False]},
+         {
+          ItemBox[
+           PaneBox[
+            
+            StyleBox["\<\"Momentum[p] is the head of a four momentum \
+p.\\n\\nThe internal representation of a $4$-dimensional $p$ is \
+Momentum[p].\\n\\nFor other than $4$ dimensions: Momentum[p, \
+dim].\\n\\nMomentum[p, 4] simplifies to Momentum[p].\"\>", 
+             "InformationUsageText",
+             StripOnInput->False,
+             LineSpacing->{1.5, 1.5, 3.}],
+            FrameMargins->{{10, 10}, {8, 10}}],
+           BaseStyle->"InformationUsageSubtitleBackground",
+           StripOnInput->False], 
+          ItemBox["\<\"\"\>",
+           BaseStyle->"InformationUsageSubtitleBackground",
+           StripOnInput->False]},
+         {
+          PaneBox[
+           TagBox[GridBox[{
+              {
+               StyleBox[
+                TagBox[
+                 TooltipBox[
+                  StyleBox["\<\" Definitions\"\>", "InformationRowLabel",
+                   StripOnInput->False],
+                  "\"Definitions\"",
+                  TooltipStyle->"TextStyling"],
+                 Annotation[#, "Definitions", "Tooltip"]& ], "DialogStyle",
+                StripOnInput->False]},
+              {
+               TemplateBox[{"\"\[ThinSpace]\"", 
+                 GridBox[{{
+                    RowBox[{
+                    RowBox[{"Momentum", "[", 
+                    RowBox[{"OPEDelta", ",", "4"}], "]"}], "=", 
+                    RowBox[{"Momentum", "[", "OPEDelta", "]"}]}]}, {" "}, {
+                    RowBox[{
+                    RowBox[{"Momentum", "[", 
+                    RowBox[{"q", ",", "4"}], "]"}], "=", 
+                    RowBox[{"Momentum", "[", "q", "]"}]}]}, {" "}, {
+                    RowBox[{
+                    RowBox[{"Momentum", "[", 
+                    RowBox[{"pElectron", ",", "4"}], "]"}], "=", 
+                    RowBox[{"Momentum", "[", "pElectron", "]"}]}]}, {" "}, {
+                    RowBox[{
+                    RowBox[{"Momentum", "[", 
+                    RowBox[{"pMuon", ",", "4"}], "]"}], "=", 
+                    RowBox[{"Momentum", "[", "pMuon", "]"}]}]}, {" "}, {
+                    RowBox[{
+                    RowBox[{"Momentum", "[", 
+                    RowBox[{"pTauon", ",", "4"}], "]"}], "=", 
+                    RowBox[{"Momentum", "[", "pTauon", "]"}]}]}, {" "}, {
+                    RowBox[{
+                    RowBox[{"Momentum", "[", 
+                    RowBox[{
+                    RowBox[{
+                    
+                    RowBox[{"GaugeXi", "[", 
+                    "FeynCalc`SharedObjects`Private`y_", "]"}], " ", 
+                    "FeynCalc`SharedObjects`Private`x_"}], ",", 
+                    
+                    RowBox[{
+                    "FeynCalc`SharedObjects`Private`dim_", ":", "4"}]}], 
+                    "]"}], ":=", 
+                    RowBox[{
+                    
+                    RowBox[{
+                    "GaugeXi", "[", "FeynCalc`SharedObjects`Private`y", "]"}],
+                     " ", 
+                    RowBox[{"Momentum", "[", 
+                    
+                    RowBox[{
+                    "FeynCalc`SharedObjects`Private`x", ",", 
+                    "FeynCalc`SharedObjects`Private`dim"}], "]"}]}]}]}, {
+                   " "}, {
+                    RowBox[{
+                    RowBox[{"Momentum", "[", 
+                    RowBox[{
+                    RowBox[{"FeynCalc`SharedObjects`Private`x_", " ", 
+                    
+                    RowBox[{"FeynCalc`SharedObjects`Private`n_", "?", 
+                    "NumberQ"}]}], ",", 
+                    RowBox[{"FeynCalc`SharedObjects`Private`dim_", ":", 
+                    "4"}]}], "]"}], ":=", 
+                    RowBox[{"FeynCalc`SharedObjects`Private`n", " ", 
+                    RowBox[{"Momentum", "[", 
+                    
+                    RowBox[{
+                    "FeynCalc`SharedObjects`Private`x", ",", 
+                    "FeynCalc`SharedObjects`Private`dim"}], "]"}]}]}]}, {
+                   " "}, {
+                    RowBox[{
+                    RowBox[{"Momentum", "[", 
+                    RowBox[{
+                    RowBox[{
+                    SuperscriptBox[
+                    RowBox[{"(", 
+                    RowBox[{"FeynCalc`SharedObjects`Private`a_", "/;", 
+                    RowBox[{"DataType", "[", 
+                    
+                    RowBox[{"FeynCalc`SharedObjects`Private`a", ",", 
+                    "FCVariable"}], "]"}]}], ")"}], 
+                    "FeynCalc`SharedObjects`Private`n_"], " ", 
+                    "FeynCalc`SharedObjects`Private`x_"}], ",", 
+                    
+                    RowBox[{
+                    "FeynCalc`SharedObjects`Private`dim_", ":", "4"}]}], 
+                    "]"}], ":=", 
+                    RowBox[{
+                    SuperscriptBox[
+                    "FeynCalc`SharedObjects`Private`a", 
+                    "FeynCalc`SharedObjects`Private`n"], " ", 
+                    RowBox[{"Momentum", "[", 
+                    
+                    RowBox[{
+                    "FeynCalc`SharedObjects`Private`x", ",", 
+                    "FeynCalc`SharedObjects`Private`dim"}], "]"}]}]}]}, {
+                   " "}, {
+                    RowBox[{
+                    RowBox[{"Momentum", "[", 
+                    RowBox[{
+                    RowBox[{
+                    SuperscriptBox[
+                    RowBox[{"(", 
+                    RowBox[{
+                    RowBox[{
+                    RowBox[{"FeynCalc`SharedObjects`Private`c_.", " ", 
+                    SuperscriptBox[
+                    "FeynCalc`SharedObjects`Private`a_", 
+                    "FeynCalc`SharedObjects`Private`m_."]}], "+", 
+                    "FeynCalc`SharedObjects`Private`b_"}], "/;", 
+                    RowBox[{"DataType", "[", 
+                    
+                    RowBox[{"FeynCalc`SharedObjects`Private`a", ",", 
+                    "FCVariable"}], "]"}]}], ")"}], 
+                    "FeynCalc`SharedObjects`Private`n_"], " ", 
+                    "FeynCalc`SharedObjects`Private`x_"}], ",", 
+                    
+                    RowBox[{
+                    "FeynCalc`SharedObjects`Private`dim_", ":", "4"}]}], 
+                    "]"}], ":=", 
+                    RowBox[{
+                    SuperscriptBox[
+                    RowBox[{"(", 
+                    RowBox[{
+                    RowBox[{"FeynCalc`SharedObjects`Private`c", " ", 
+                    SuperscriptBox[
+                    "FeynCalc`SharedObjects`Private`a", 
+                    "FeynCalc`SharedObjects`Private`m"]}], "+", 
+                    "FeynCalc`SharedObjects`Private`b"}], ")"}], 
+                    "FeynCalc`SharedObjects`Private`n"], " ", 
+                    RowBox[{"Momentum", "[", 
+                    
+                    RowBox[{
+                    "FeynCalc`SharedObjects`Private`x", ",", 
+                    "FeynCalc`SharedObjects`Private`dim"}], "]"}]}]}]}, {
+                   " "}, {
+                    RowBox[{
+                    RowBox[{"Momentum", "[", 
+                    RowBox[{
+                    RowBox[{
+                    
+                    RowBox[{"FeynCalc`SharedObjects`Private`n_", " ", 
+                    "FeynCalc`SharedObjects`Private`x_"}], "/;", 
+                    RowBox[{"DataType", "[", 
+                    
+                    RowBox[{"FeynCalc`SharedObjects`Private`n", ",", 
+                    "FCVariable"}], "]"}]}], ",", 
+                    
+                    RowBox[{
+                    "FeynCalc`SharedObjects`Private`dim_", ":", "4"}]}], 
+                    "]"}], ":=", 
+                    RowBox[{"FeynCalc`SharedObjects`Private`n", " ", 
+                    RowBox[{"Momentum", "[", 
+                    
+                    RowBox[{
+                    "FeynCalc`SharedObjects`Private`x", ",", 
+                    "FeynCalc`SharedObjects`Private`dim"}], "]"}]}]}]}, {
+                   " "}, {
+                    RowBox[{
+                    RowBox[{"Momentum", "[", 
+                    RowBox[{
+                    RowBox[{"FeynCalc`SharedObjects`Private`x", ":", 
+                    RowBox[{"Except", "[", "_Pattern", "]"}]}], ",", "4"}], 
+                    "]"}], ":=", 
+                    RowBox[{
+                    RowBox[{"Momentum", "[", 
+                    RowBox[{"FeynCalc`SharedObjects`Private`x", ",", "4"}], 
+                    "]"}], "=", 
+                    RowBox[{
+                    "Momentum", "[", "FeynCalc`SharedObjects`Private`x", 
+                    "]"}]}]}]}, {" "}, {
+                    RowBox[{
+                    RowBox[{"Momentum", "[", 
+                    RowBox[{"0", ",", 
+                    RowBox[{"_", ":", "4"}]}], "]"}], ":=", "0"}]}, {" "}, {
+                    RowBox[{
+                    RowBox[{"Momentum", "[", 
+                    RowBox[{"_", ",", "0"}], "]"}], ":=", "0"}]}, {" "}, {
+                    RowBox[{
+                    RowBox[{"Momentum", "[", 
+                    RowBox[{
+                    
+                    RowBox[{
+                    "LorentzIndex", "[", "FeynCalc`SharedObjects`Private`x_", 
+                    "]"}], ",", 
+                    
+                    RowBox[{
+                    "FeynCalc`SharedObjects`Private`dim_", ":", "4"}]}], 
+                    "]"}], ":=", 
+                    RowBox[{"(", 
+                    RowBox[{
+                    RowBox[{"Message", "[", 
+                    RowBox[{
+                    StyleBox[
+                    RowBox[{"Momentum", "::", "lorentzhead"}], "MessageName"],
+                     ",", 
+                    RowBox[{"ToString", "[", 
+                    RowBox[{
+                    RowBox[{"Momentum", "[", 
+                    RowBox[{
+                    RowBox[{
+                    RowBox[{"FCGV", "[", "\"LorentzIndex\"", "]"}], "[", 
+                    "FeynCalc`SharedObjects`Private`x", "]"}], ",", 
+                    "FeynCalc`SharedObjects`Private`dim"}], "]"}], ",", 
+                    "InputForm"}], "]"}]}], "]"}], ";", 
+                    RowBox[{"Momentum", "[", 
+                    RowBox[{
+                    RowBox[{
+                    RowBox[{"FCGV", "[", "\"LorentzIndex\"", "]"}], "[", 
+                    "FeynCalc`SharedObjects`Private`x", "]"}], ",", 
+                    "FeynCalc`SharedObjects`Private`dim"}], "]"}]}], 
+                    ")"}]}]}, {" "}, {
+                    RowBox[{
+                    RowBox[{"Momentum", "[", 
+                    RowBox[{
+                    RowBox[{"Momentum", "[", 
+                    RowBox[{"FeynCalc`SharedObjects`Private`x_", ",", 
+                    
+                    RowBox[{"FeynCalc`SharedObjects`Private`dim1_", ":", 
+                    "4"}]}], "]"}], ",", 
+                    
+                    RowBox[{
+                    "FeynCalc`SharedObjects`Private`dim2_", ":", "4"}]}], 
+                    "]"}], ":=", 
+                    RowBox[{"If", "[", 
+                    RowBox[{
+                    
+                    RowBox[{
+                    "FeynCalc`SharedObjects`Private`dim1", "===", 
+                    "FeynCalc`SharedObjects`Private`dim2"}], ",", 
+                    RowBox[{"Momentum", "[", 
+                    
+                    RowBox[{"FeynCalc`SharedObjects`Private`x", ",", 
+                    "FeynCalc`SharedObjects`Private`dim1"}], "]"}], ",", 
+                    RowBox[{"Momentum", "[", 
+                    RowBox[{"FeynCalc`SharedObjects`Private`x", ",", 
+                    RowBox[{"{", 
+                    
+                    RowBox[{"FeynCalc`SharedObjects`Private`dim1", ",", 
+                    "FeynCalc`SharedObjects`Private`dim2"}], "}"}]}], "]"}]}],
+                     "]"}]}]}, {" "}, {
+                    RowBox[{
+                    RowBox[{"Momentum", "[", 
+                    RowBox[{
+                    RowBox[{"LightConePerpendicularComponent", "[", 
+                    
+                    RowBox[{"FeynCalc`SharedObjects`Private`p_", ",", 
+                    "FeynCalc`SharedObjects`Private`rest__"}], "]"}], ",", 
+                    "FeynCalc`SharedObjects`Private`dim___"}], "]"}], ":=", 
+                    RowBox[{"LightConePerpendicularComponent", "[", 
+                    RowBox[{
+                    RowBox[{"Momentum", "[", 
+                    
+                    RowBox[{"FeynCalc`SharedObjects`Private`p", ",", 
+                    "FeynCalc`SharedObjects`Private`dim"}], "]"}], ",", 
+                    "FeynCalc`SharedObjects`Private`rest"}], "]"}]}]}, {" "}},
+                   GridBoxAlignment -> {"Columns" -> {{Left}}}, 
+                  DefaultBaseStyle -> "Column", 
+                  GridBoxItemSize -> {
+                   "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}]},
+                "RowDefault"]},
+              {
+               StyleBox[
+                TagBox[
+                 TooltipBox[
+                  
+                  StyleBox["\<\" Format Definitions\"\>", 
+                   "InformationRowLabel",
+                   StripOnInput->False],
+                  "\"FormatValues\"",
+                  TooltipStyle->"TextStyling"],
+                 Annotation[#, "FormatValues", "Tooltip"]& ], "DialogStyle",
+                StripOnInput->False]},
+              {
+               TemplateBox[{"\"\[ThinSpace]\"", 
+                 GridBox[{{
+                    StyleBox[
+                    "Momentum /: \
+MakeBoxes[Momentum[Polarization[FeynCalc`SharedObjectsTypesetting`Private`a_, \
+FeynCalc`SharedObjectsTypesetting`Private`b:Except[_?OptionQ], \
+OptionsPattern[]], FeynCalc`SharedObjectsTypesetting`Private`dim_:4], \
+TraditionalForm] := \
+RowBox[{FeynCalc`SharedObjectsTypesetting`Private`polarizationRep[FeynCalc`\
+SharedObjectsTypesetting`Private`b, \
+FeynCalc`SharedObjectsTypesetting`Private`dim], \"(\", \
+TBox[FeynCalc`SharedObjectsTypesetting`Private`a], \")\"}]", 
+                    ShowStringCharacters -> True, NumberMarks -> True]}, {
+                   " "}, {
+                    StyleBox[
+                    "Momentum /: MakeBoxes[Momentum[OPEDelta, _:4], \
+TraditionalForm] := TBox[OPEDelta]", ShowStringCharacters -> True, 
+                    NumberMarks -> True]}, {" "}, {
+                    StyleBox[
+                    "Momentum /: \
+MakeBoxes[Momentum[FeynCalc`SharedObjectsTypesetting`Private`p:Except[_\
+Subscript | _Superscript | _Plus], \
+FeynCalc`SharedObjectsTypesetting`Private`dim_:4], TraditionalForm] := \
+FeynCalc`SharedObjectsTypesetting`Private`momentumRep[FeynCalc`\
+SharedObjectsTypesetting`Private`p, \
+FeynCalc`SharedObjectsTypesetting`Private`dim] /; \
+FeynCalc`SharedObjectsTypesetting`Private`p =!= OPEDelta", 
+                    ShowStringCharacters -> True, NumberMarks -> True]}, {
+                   " "}, {
+                    StyleBox[
+                    "Momentum /: \
+MakeBoxes[Momentum[(FeynCalc`SharedObjectsTypesetting`Private`p:Subscript | \
+Superscript)[FeynCalc`SharedObjectsTypesetting`Private`x_, \
+FeynCalc`SharedObjectsTypesetting`Private`y_], \
+FeynCalc`SharedObjectsTypesetting`Private`dim_:4], TraditionalForm] := \
+If[FeynCalc`SharedObjectsTypesetting`Private`p === Subscript, \
+SubscriptBox[TBox[Momentum[FeynCalc`SharedObjectsTypesetting`Private`x, \
+FeynCalc`SharedObjectsTypesetting`Private`dim]], \
+ToBoxes[FeynCalc`SharedObjectsTypesetting`Private`y, TraditionalForm]], \
+SuperscriptBox[TBox[Momentum[FeynCalc`SharedObjectsTypesetting`Private`x, \
+FeynCalc`SharedObjectsTypesetting`Private`dim]], \
+ToBoxes[FeynCalc`SharedObjectsTypesetting`Private`y, TraditionalForm]]]", 
+                    ShowStringCharacters -> True, NumberMarks -> True]}, {
+                   " "}, {
+                    StyleBox[
+                    "Momentum /: \
+MakeBoxes[Momentum[FeynCalc`SharedObjectsTypesetting`Private`p_Plus, \
+FeynCalc`SharedObjectsTypesetting`Private`dim_:4], TraditionalForm] := \
+TBox[(Momentum[#1, FeynCalc`SharedObjectsTypesetting`Private`dim] & ) /@ \
+Expand[FeynCalc`SharedObjectsTypesetting`Private`p]]", ShowStringCharacters -> 
+                    True, NumberMarks -> True]}, {" "}}, ColumnAlignments -> 
+                  Left, GridBaseline -> {Baseline, {1, 1}}]},
+                "RowDefault"]}
+             },
+             DefaultBaseStyle->"Column",
+             GridBoxAlignment->{"Columns" -> {{Left}}},
+             
+             GridBoxItemSize->{
+              "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+            "Column"],
+           FrameMargins->{{6, 0}, {3, 6}}], "\<\"\"\>"},
+         {
+          PaneBox[GridBox[{
+             {
+              
+              DynamicModuleBox[{System`InformationDump`open$$ = {
+               False, False, False, False, False, False}}, 
+               StyleBox[GridBox[{
+                  {
+                   TagBox[
+                    TooltipBox[
+                    StyleBox["\<\" Full Name\"\>", "InformationRowLabel",
+                    StripOnInput->False],
+                    "\"FullName\"",
+                    TooltipStyle->"TextStyling"],
+                    
+                    Annotation[#, "FullName", 
+                    "Tooltip"]& ], "\<\"FeynCalc`Momentum\"\>"}
+                 },
+                 AutoDelete->False,
+                 GridBoxAlignment->{"Columns" -> {Right, Left}},
+                 GridBoxDividers->None,
+                 GridBoxItemSize->{"Columns" -> {Automatic, Automatic}},
+                 GridBoxSpacings->{"Columns" -> {
+                    Offset[0.27999999999999997`], {
+                    Offset[0.5599999999999999]}, 
+                    Offset[0.27999999999999997`]}, "Rows" -> {
+                    Offset[0.2], {
+                    Offset[0.8]}, 
+                    Offset[0.2]}}], "DialogStyle",
+                StripOnInput->False],
+               DynamicModuleValues:>{}]}
+            },
+            DefaultBaseStyle->"Column",
+            GridBoxAlignment->{"Columns" -> {{Left}}},
+            GridBoxDividers->{"Columns" -> {{False}}, "Rows" -> {{False}}},
+            
+            GridBoxItemSize->{
+             "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}},
+            GridBoxSpacings->{"Columns" -> {
+                Offset[0.27999999999999997`], {
+                 Offset[0.5599999999999999]}, 
+                Offset[0.27999999999999997`]}, "Rows" -> {
+                Offset[0.2], {
+                 Offset[3.6]}, 
+                Offset[0.2]}}],
+           FrameMargins->{{6, 6}, {6, 3}}], ""},
+         {
+          ItemBox[
+           TagBox[
+            ButtonBox[
+             PaneSelectorBox[{False->
+              
+              DynamicBox[FEPrivate`FrontEndResource[
+               "FEBitmaps", "UpPointerOpener"]], True->
+              
+              DynamicBox[FEPrivate`FrontEndResource[
+               "FEBitmaps", "UpPointerOpenerHot"]]}, Dynamic[
+              System`InformationDump`mouseOver$$]],
+             Alignment->Left,
+             Appearance->{"Default" -> None},
+             
+             ButtonFunction:>FEPrivate`Set[
+              System`InformationDump`open$$, False],
+             Evaluator->Automatic,
+             FrameMargins->{{9, 0}, {0, 0}},
+             ImageMargins->0,
+             ImageSize->Full,
+             Method->"Preemptive"],
+            
+            EventHandlerTag[{
+             "MouseEntered" :> 
+              FEPrivate`Set[System`InformationDump`mouseOver$$, True], 
+              "MouseExited" :> 
+              FEPrivate`Set[System`InformationDump`mouseOver$$, False], 
+              Method -> "Preemptive", PassEventsDown -> Automatic, 
+              PassEventsUp -> True}]],
+           BaseStyle->"InformationTitleBackground",
+           StripOnInput->False], "\[SpanFromLeft]"}
+        },
+        AutoDelete->False,
+        FrameStyle->Directive[
+          GrayLevel[0.8], 
+          Thickness[Tiny]],
+        GridBoxAlignment->{"Columns" -> {Left, Right}, "Rows" -> {{Center}}},
+        GridBoxDividers->{
+         "Columns" -> {{None}}, "Rows" -> {False, {True}, False}},
+        GridBoxItemSize->{
+         "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+       "Grid"], False->
+      TagBox[GridBox[{
+         {
+          ItemBox[
+           PaneBox[
+            StyleBox["\<\" Symbol\"\>", "InformationTitleText",
+             StripOnInput->False],
+            FrameMargins->{{4, 0}, {-1, 1}}],
+           BaseStyle->"InformationTitleBackground",
+           StripOnInput->False], 
+          ItemBox["\<\"\"\>",
+           BaseStyle->"InformationTitleBackground",
+           StripOnInput->False]},
+         {
+          ItemBox[
+           PaneBox[
+            
+            StyleBox["\<\"Momentum[p] is the head of a four momentum \
+p.\\n\\nThe internal representation of a $4$-dimensional $p$ is \
+Momentum[p].\\n\\nFor other than $4$ dimensions: Momentum[p, \
+dim].\\n\\nMomentum[p, 4] simplifies to Momentum[p].\"\>", 
+             "InformationUsageText",
+             StripOnInput->False,
+             LineSpacing->{1.5, 1.5, 3.}],
+            FrameMargins->{{10, 10}, {8, 10}}],
+           BaseStyle->"InformationUsageSubtitleBackground",
+           StripOnInput->False], 
+          ItemBox["\<\"\"\>",
+           BaseStyle->"InformationUsageSubtitleBackground",
+           StripOnInput->False]},
+         {
+          ItemBox[
+           TagBox[
+            ButtonBox[
+             PaneSelectorBox[{False->
+              
+              DynamicBox[FEPrivate`FrontEndResource[
+               "FEBitmaps", "DownPointerOpener"],
+               ImageSizeCache->{10., {3., 7.}}], True->
+              
+              DynamicBox[FEPrivate`FrontEndResource[
+               "FEBitmaps", "DownPointerOpenerHot"],
+               ImageSizeCache->{10., {3., 7.}}]}, Dynamic[
+              System`InformationDump`mouseOver$$]],
+             Alignment->Left,
+             Appearance->{"Default" -> None},
+             
+             ButtonFunction:>FEPrivate`Set[
+              System`InformationDump`open$$, True],
+             Evaluator->Automatic,
+             FrameMargins->{{9, 0}, {0, 0}},
+             ImageMargins->0,
+             ImageSize->Full,
+             Method->"Preemptive"],
+            
+            EventHandlerTag[{
+             "MouseEntered" :> 
+              FEPrivate`Set[System`InformationDump`mouseOver$$, True], 
+              "MouseExited" :> 
+              FEPrivate`Set[System`InformationDump`mouseOver$$, False], 
+              Method -> "Preemptive", PassEventsDown -> Automatic, 
+              PassEventsUp -> True}]],
+           BaseStyle->"InformationTitleBackground",
+           StripOnInput->False], "\[SpanFromLeft]"}
+        },
+        AutoDelete->False,
+        FrameStyle->Directive[
+          GrayLevel[0.8], 
+          Thickness[Tiny]],
+        GridBoxAlignment->{"Columns" -> {Left, Right}, "Rows" -> {{Center}}},
+        GridBoxDividers->{
+         "Columns" -> {{None}}, "Rows" -> {False, {True}, False}},
+        GridBoxItemSize->{
+         "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+       "Grid"]}, Dynamic[System`InformationDump`open$$],
+      BaselinePosition->Baseline,
+      FrameMargins->0,
+      ImageSize->Automatic],
+     DynamicModuleValues:>{}],
+    BaseStyle->"InformationGridFrame",
+    StripOnInput->False], "InformationGridPlain",
+   StripOnInput->False],
+  InformationData[<|
+   "ObjectType" -> "Symbol", "Usage" -> 
+    "Momentum[p] is the head of a four momentum p.\n\nThe internal \
+representation of a $4$-dimensional $p$ is Momentum[p].\n\nFor other than $4$ \
+dimensions: Momentum[p, dim].\n\nMomentum[p, 4] simplifies to Momentum[p].", 
+    "Documentation" -> None, "OwnValues" -> None, "UpValues" -> None, 
+    "DownValues" -> 
+    Information`InformationValueForm[
+     DownValues, FeynCalc`Momentum, {
+      FeynCalc`Momentum[FeynCalc`OPEDelta, 4] -> 
+       FeynCalc`Momentum[FeynCalc`OPEDelta], 
+       FeynCalc`Momentum[$CellContext`q, 4] -> 
+       FeynCalc`Momentum[$CellContext`q], 
+       FeynCalc`Momentum[$CellContext`pElectron, 4] -> 
+       FeynCalc`Momentum[$CellContext`pElectron], 
+       FeynCalc`Momentum[$CellContext`pMuon, 4] -> 
+       FeynCalc`Momentum[$CellContext`pMuon], 
+       FeynCalc`Momentum[$CellContext`pTauon, 4] -> 
+       FeynCalc`Momentum[$CellContext`pTauon], 
+       FeynCalc`Momentum[FeynCalc`GaugeXi[
+           Pattern[FeynCalc`SharedObjects`Private`y, 
+            Blank[]]] Pattern[FeynCalc`SharedObjects`Private`x, 
+           Blank[]], 
+         Optional[
+          Pattern[FeynCalc`SharedObjects`Private`dim, 
+           Blank[]], 4]] :> 
+       FeynCalc`GaugeXi[FeynCalc`SharedObjects`Private`y] 
+        FeynCalc`Momentum[
+         FeynCalc`SharedObjects`Private`x, 
+          FeynCalc`SharedObjects`Private`dim], 
+       FeynCalc`Momentum[Pattern[FeynCalc`SharedObjects`Private`x, 
+           Blank[]] PatternTest[
+           Pattern[FeynCalc`SharedObjects`Private`n, 
+            Blank[]], NumberQ], 
+         Optional[
+          Pattern[FeynCalc`SharedObjects`Private`dim, 
+           Blank[]], 4]] :> 
+       FeynCalc`SharedObjects`Private`n 
+        FeynCalc`Momentum[
+         FeynCalc`SharedObjects`Private`x, 
+          FeynCalc`SharedObjects`Private`dim], FeynCalc`Momentum[Condition[
+            Pattern[FeynCalc`SharedObjects`Private`a, 
+             Blank[]], 
+            FeynCalc`DataType[
+            FeynCalc`SharedObjects`Private`a, FeynCalc`FCVariable]]^
+          Pattern[FeynCalc`SharedObjects`Private`n, 
+            Blank[]] Pattern[FeynCalc`SharedObjects`Private`x, 
+           Blank[]], 
+         Optional[
+          Pattern[FeynCalc`SharedObjects`Private`dim, 
+           Blank[]], 4]] :> 
+       FeynCalc`SharedObjects`Private`a^FeynCalc`SharedObjects`Private`n 
+        FeynCalc`Momentum[
+         FeynCalc`SharedObjects`Private`x, 
+          FeynCalc`SharedObjects`Private`dim], 
+       FeynCalc`Momentum[Condition[Optional[
+               Pattern[FeynCalc`SharedObjects`Private`c, 
+                Blank[]]] Pattern[FeynCalc`SharedObjects`Private`a, 
+                Blank[]]^Optional[
+                Pattern[FeynCalc`SharedObjects`Private`m, 
+                 Blank[]]] + Pattern[FeynCalc`SharedObjects`Private`b, 
+              Blank[]], 
+            FeynCalc`DataType[
+            FeynCalc`SharedObjects`Private`a, FeynCalc`FCVariable]]^
+          Pattern[FeynCalc`SharedObjects`Private`n, 
+            Blank[]] Pattern[FeynCalc`SharedObjects`Private`x, 
+           Blank[]], 
+         Optional[
+          Pattern[FeynCalc`SharedObjects`Private`dim, 
+           Blank[]], 4]] :> (
+          FeynCalc`SharedObjects`Private`c 
+           FeynCalc`SharedObjects`Private`a^FeynCalc`SharedObjects`Private`m + 
+          FeynCalc`SharedObjects`Private`b)^FeynCalc`SharedObjects`Private`n 
+        FeynCalc`Momentum[
+         FeynCalc`SharedObjects`Private`x, 
+          FeynCalc`SharedObjects`Private`dim], FeynCalc`Momentum[
+         Condition[Pattern[FeynCalc`SharedObjects`Private`n, 
+            Blank[]] Pattern[FeynCalc`SharedObjects`Private`x, 
+            Blank[]], 
+          FeynCalc`DataType[
+          FeynCalc`SharedObjects`Private`n, FeynCalc`FCVariable]], 
+         Optional[
+          Pattern[FeynCalc`SharedObjects`Private`dim, 
+           Blank[]], 4]] :> 
+       FeynCalc`SharedObjects`Private`n 
+        FeynCalc`Momentum[
+         FeynCalc`SharedObjects`Private`x, 
+          FeynCalc`SharedObjects`Private`dim], FeynCalc`Momentum[
+         Pattern[FeynCalc`SharedObjects`Private`x, 
+          Except[
+           Blank[Pattern]]], 4] :> (
+        FeynCalc`Momentum[FeynCalc`SharedObjects`Private`x, 4] = 
+        FeynCalc`Momentum[FeynCalc`SharedObjects`Private`x]), 
+       FeynCalc`Momentum[0, 
+         Optional[
+          Blank[], 4]] :> 0, FeynCalc`Momentum[
+         Blank[], 0] :> 0, FeynCalc`Momentum[
+         FeynCalc`LorentzIndex[
+          Pattern[FeynCalc`SharedObjects`Private`x, 
+           Blank[]]], 
+         Optional[
+          Pattern[FeynCalc`SharedObjects`Private`dim, 
+           Blank[]], 4]] :> (Message[
+          MessageName[FeynCalc`Momentum, "lorentzhead"], 
+          ToString[
+           FeynCalc`Momentum[
+            FeynCalc`FCGV["LorentzIndex"][FeynCalc`SharedObjects`Private`x], 
+            FeynCalc`SharedObjects`Private`dim], InputForm]]; 
+        FeynCalc`Momentum[
+          FeynCalc`FCGV["LorentzIndex"][FeynCalc`SharedObjects`Private`x], 
+          FeynCalc`SharedObjects`Private`dim]), FeynCalc`Momentum[
+         FeynCalc`Momentum[
+          Pattern[FeynCalc`SharedObjects`Private`x, 
+           Blank[]], 
+          Optional[
+           Pattern[FeynCalc`SharedObjects`Private`dim1, 
+            Blank[]], 4]], 
+         Optional[
+          Pattern[FeynCalc`SharedObjects`Private`dim2, 
+           Blank[]], 4]] :> 
+       If[FeynCalc`SharedObjects`Private`dim1 === 
+         FeynCalc`SharedObjects`Private`dim2, 
+         FeynCalc`Momentum[
+         FeynCalc`SharedObjects`Private`x, 
+          FeynCalc`SharedObjects`Private`dim1], 
+         FeynCalc`Momentum[
+         FeynCalc`SharedObjects`Private`x, {
+          FeynCalc`SharedObjects`Private`dim1, 
+           FeynCalc`SharedObjects`Private`dim2}]], FeynCalc`Momentum[
+         FeynCalc`LightConePerpendicularComponent[
+          Pattern[FeynCalc`SharedObjects`Private`p, 
+           Blank[]], 
+          Pattern[FeynCalc`SharedObjects`Private`rest, 
+           BlankSequence[]]], 
+         Pattern[FeynCalc`SharedObjects`Private`dim, 
+          BlankNullSequence[]]] :> FeynCalc`LightConePerpendicularComponent[
+         FeynCalc`Momentum[
+         FeynCalc`SharedObjects`Private`p, 
+          FeynCalc`SharedObjects`Private`dim], 
+         FeynCalc`SharedObjects`Private`rest]}], "SubValues" -> None, 
+    "DefaultValues" -> None, "NValues" -> None, "FormatValues" -> 
+    Information`InformationValueForm[
+     FormatValues, FeynCalc`Momentum, {MakeBoxes[
+         FeynCalc`Momentum[
+          FeynCalc`Polarization[
+           Pattern[FeynCalc`SharedObjectsTypesetting`Private`a, 
+            Blank[]], 
+           Pattern[FeynCalc`SharedObjectsTypesetting`Private`b, 
+            Except[
+             PatternTest[
+              Blank[], OptionQ]]], 
+           OptionsPattern[]], 
+          Optional[
+           Pattern[FeynCalc`SharedObjectsTypesetting`Private`dim, 
+            Blank[]], 4]], TraditionalForm] :> RowBox[{
+          FeynCalc`SharedObjectsTypesetting`Private`polarizationRep[
+          FeynCalc`SharedObjectsTypesetting`Private`b, 
+           FeynCalc`SharedObjectsTypesetting`Private`dim], "(", 
+          FeynCalc`TBox[FeynCalc`SharedObjectsTypesetting`Private`a], ")"}], 
+       MakeBoxes[
+         FeynCalc`Momentum[FeynCalc`OPEDelta, 
+          Optional[
+           Blank[], 4]], TraditionalForm] :> FeynCalc`TBox[FeynCalc`OPEDelta],
+        MakeBoxes[
+         FeynCalc`Momentum[
+          Pattern[FeynCalc`SharedObjectsTypesetting`Private`p, 
+           Except[
+            Alternatives[
+             Blank[Subscript], 
+             Blank[Superscript], 
+             Blank[Plus]]]], 
+          Optional[
+           Pattern[FeynCalc`SharedObjectsTypesetting`Private`dim, 
+            Blank[]], 4]], TraditionalForm] :> Condition[
+         FeynCalc`SharedObjectsTypesetting`Private`momentumRep[
+         FeynCalc`SharedObjectsTypesetting`Private`p, 
+          FeynCalc`SharedObjectsTypesetting`Private`dim], 
+         FeynCalc`SharedObjectsTypesetting`Private`p =!= FeynCalc`OPEDelta], 
+       MakeBoxes[
+         FeynCalc`Momentum[
+          Pattern[FeynCalc`SharedObjectsTypesetting`Private`p, 
+           Alternatives[Subscript, Superscript]][
+           Pattern[FeynCalc`SharedObjectsTypesetting`Private`x, 
+            Blank[]], 
+           Pattern[FeynCalc`SharedObjectsTypesetting`Private`y, 
+            Blank[]]], 
+          Optional[
+           Pattern[FeynCalc`SharedObjectsTypesetting`Private`dim, 
+            Blank[]], 4]], TraditionalForm] :> 
+       If[FeynCalc`SharedObjectsTypesetting`Private`p === Subscript, 
+         SubscriptBox[
+          FeynCalc`TBox[
+           FeynCalc`Momentum[
+           FeynCalc`SharedObjectsTypesetting`Private`x, 
+            FeynCalc`SharedObjectsTypesetting`Private`dim]], 
+          ToBoxes[
+          FeynCalc`SharedObjectsTypesetting`Private`y, TraditionalForm]], 
+         SuperscriptBox[
+          FeynCalc`TBox[
+           FeynCalc`Momentum[
+           FeynCalc`SharedObjectsTypesetting`Private`x, 
+            FeynCalc`SharedObjectsTypesetting`Private`dim]], 
+          ToBoxes[
+          FeynCalc`SharedObjectsTypesetting`Private`y, TraditionalForm]]], 
+       MakeBoxes[
+         FeynCalc`Momentum[
+          Pattern[FeynCalc`SharedObjectsTypesetting`Private`p, 
+           Blank[Plus]], 
+          Optional[
+           Pattern[FeynCalc`SharedObjectsTypesetting`Private`dim, 
+            Blank[]], 4]], TraditionalForm] :> FeynCalc`TBox[
+         Map[
+         FeynCalc`Momentum[#, 
+           FeynCalc`SharedObjectsTypesetting`Private`dim]& , 
+          Expand[FeynCalc`SharedObjectsTypesetting`Private`p]]]}], "Options" -> 
+    None, "Attributes" -> {}, "FullName" -> "FeynCalc`Momentum"|>, 
+   False]]], "Output",
+ CellChangeTimes->{3.941635026305666*^9},
+ CellLabel->"Out[23]=",ExpressionUUID->"37805ae6-1bdc-420d-bb3d-7cf2d5104afa"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Momentum", "[", 
+  RowBox[{"pElectron", ",", "4"}], "]"}]], "Input",
+ CellChangeTimes->{{3.941634945322154*^9, 3.941634946398717*^9}},
+ CellLabel->"In[21]:=",ExpressionUUID->"547f4f88-eabc-482a-901b-a26fd512f782"],
+
+Cell[BoxData[
+ RowBox[{"Momentum", "[", "pElectron", "]"}]], "Output",
+ CellChangeTimes->{3.941634946625649*^9},
+ CellLabel->"Out[21]=",ExpressionUUID->"5b324e4e-2e78-40c0-a5b0-56eed1e3480a"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Momentum", "[", 
+   RowBox[{"pElectron", ",", "4"}], "]"}], "==", 
+  RowBox[{"Momentum", "[", "pElectron", "]"}]}]], "Input",
+ CellChangeTimes->{{3.941634952662777*^9, 3.941634953069434*^9}},
+ CellLabel->"In[22]:=",ExpressionUUID->"1a2a8fe3-e318-4ead-a2e3-3919fbb4010c"],
+
+Cell[BoxData["True"], "Output",
+ CellChangeTimes->{3.941634953290374*^9},
+ CellLabel->"Out[22]=",ExpressionUUID->"42c9d911-629e-4606-af3a-a01ecc81c948"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"MetricTensor", "[", 
+  RowBox[{"\[Alpha]", ",", "\[Beta]", ",", 
+   RowBox[{"Dimension", "->", "numberOfSpacetimeDimensions"}]}], 
+  "]"}]], "Input",
+ CellChangeTimes->{{3.941635038773058*^9, 3.9416350539308662`*^9}},
+ CellLabel->"In[24]:=",ExpressionUUID->"e35d47ee-98af-4790-bf24-110031d8a43c"],
+
+Cell[BoxData[
+ RowBox[{"Pair", "[", 
+  RowBox[{
+   RowBox[{"LorentzIndex", "[", 
+    RowBox[{"\[Alpha]", ",", "numberOfSpacetimeDimensions"}], "]"}], ",", 
+   RowBox[{"LorentzIndex", "[", 
+    RowBox[{"\[Beta]", ",", "numberOfSpacetimeDimensions"}], "]"}]}], 
+  "]"}]], "Output",
+ CellChangeTimes->{3.9416350541805477`*^9},
+ CellLabel->"Out[24]=",ExpressionUUID->"cc3c652f-8eb5-42c5-a4d2-7acb6a1ba775"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"MTD", "[", 
+  RowBox[{"\[Alpha]", ",", "\[Beta]"}], "]"}]], "Input",
+ CellChangeTimes->{{3.941635059113765*^9, 3.941635096829232*^9}},
+ CellLabel->"In[28]:=",ExpressionUUID->"08550712-e8fe-4d71-b338-d611dbc60d82"],
+
+Cell[BoxData[
+ RowBox[{"MTD", "[", 
+  RowBox[{"\[Alpha]", ",", "\[Beta]"}], "]"}]], "Output",
+ CellChangeTimes->{{3.941635064456925*^9, 3.941635097215145*^9}},
+ CellLabel->"Out[28]=",ExpressionUUID->"7cfc69a9-7d50-4919-ae4c-c40bf3817fce"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Contract", "[", 
+  RowBox[{
+   RowBox[{"MTD", "[", 
+    RowBox[{"\[Alpha]", ",", "\[Beta]"}], "]"}], 
+   RowBox[{"MTD", "[", 
+    RowBox[{"\[Alpha]", ",", "\[Beta]"}], "]"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.941635098840993*^9, 3.941635109886374*^9}},
+ CellLabel->"In[30]:=",ExpressionUUID->"9773a161-0c32-4d29-afe7-c4887967636a"],
+
+Cell[BoxData["D"], "Output",
+ CellChangeTimes->{{3.941635104488243*^9, 3.941635110123849*^9}},
+ CellLabel->"Out[30]=",ExpressionUUID->"a715bfbe-c1a8-4456-839a-1ff088c4a42c"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"Momentum", "[", 
+  RowBox[{"pElectron", ",", " ", "numberOfSpacetimeDimensions"}], 
+  "]"}], "\[IndentingNewLine]", 
+ RowBox[{"Momentum", "[", 
+  RowBox[{"pMuon", ",", " ", "numberOfSpacetimeDimensions"}], 
+  "]"}], "\[IndentingNewLine]", 
+ RowBox[{"Momentum", "[", 
+  RowBox[{"pTauon", ",", " ", "numberOfSpacetimeDimensions"}], 
+  "]"}]}], "Input",
+ CellChangeTimes->{{3.941634800601796*^9, 3.9416348130281887`*^9}, {
+  3.941634900273406*^9, 3.941634915152678*^9}},
+ CellLabel->"In[18]:=",ExpressionUUID->"de92fcba-fa38-4838-9272-87c851a40b4e"],
+
+Cell[BoxData[
+ RowBox[{"Momentum", "[", 
+  RowBox[{"pElectron", ",", "numberOfSpacetimeDimensions"}], "]"}]], "Output",\
+
+ CellChangeTimes->{{3.941634889655562*^9, 3.941634916565117*^9}},
+ CellLabel->"Out[18]=",ExpressionUUID->"04c84a09-e7fd-4956-98ea-e64ff58e573e"],
+
+Cell[BoxData[
+ RowBox[{"Momentum", "[", 
+  RowBox[{"pMuon", ",", "numberOfSpacetimeDimensions"}], "]"}]], "Output",
+ CellChangeTimes->{{3.941634889655562*^9, 3.9416349165676813`*^9}},
+ CellLabel->"Out[19]=",ExpressionUUID->"be2da8d4-9d28-4892-8c56-b6ef9d028ff4"],
+
+Cell[BoxData[
+ RowBox[{"Momentum", "[", 
+  RowBox[{"pTauon", ",", "numberOfSpacetimeDimensions"}], "]"}]], "Output",
+ CellChangeTimes->{{3.941634889655562*^9, 3.941634916568643*^9}},
+ CellLabel->"Out[20]=",ExpressionUUID->"2be737f4-8a2d-4bf5-9c7b-73308f3db9fd"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"SP", "[", 
+   RowBox[{"pElectron", ",", "pElectron"}], "]"}], "=", 
+  SuperscriptBox["me", "2"]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"SP", "[", 
+   RowBox[{"pMuon", ",", "pMuon"}], "]"}], "=", 
+  SuperscriptBox["m\[Mu]", "2"]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"SP", "[", 
+   RowBox[{"pTauon", ",", "pTauon"}], "]"}], "=", 
+  SuperscriptBox["m\[Tau]", "2"]}]}], "Input",
+ CellChangeTimes->{{3.941634593265999*^9, 3.9416345956234083`*^9}, {
+  3.941634670151765*^9, 3.941634759662032*^9}},
+ CellLabel->"In[12]:=",ExpressionUUID->"8dc2cc6e-8af8-4452-ba87-e2b8bbdedb97"],
+
+Cell[BoxData[
+ SuperscriptBox["me", "2"]], "Output",
+ CellChangeTimes->{{3.941634599218206*^9, 3.941634603043639*^9}, 
+   3.941634673183325*^9, {3.941634727549329*^9, 3.941634760027605*^9}},
+ CellLabel->"Out[12]=",ExpressionUUID->"28f85902-25ef-47fd-99ad-f9d16d9dd6a8"],
+
+Cell[BoxData[
+ SuperscriptBox["m\[Mu]", "2"]], "Output",
+ CellChangeTimes->{{3.941634599218206*^9, 3.941634603043639*^9}, 
+   3.941634673183325*^9, {3.941634727549329*^9, 3.941634760032283*^9}},
+ CellLabel->"Out[13]=",ExpressionUUID->"beb05098-18d2-4f91-a459-9d2483c83bd1"],
+
+Cell[BoxData[
+ SuperscriptBox["m\[Tau]", "2"]], "Output",
+ CellChangeTimes->{{3.941634599218206*^9, 3.941634603043639*^9}, 
+   3.941634673183325*^9, {3.941634727549329*^9, 3.941634760033477*^9}},
+ CellLabel->"Out[14]=",ExpressionUUID->"212041bb-b7a1-46a9-b90d-3e3437467184"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"SP", "[", "]"}]], "Input",
+ CellChangeTimes->{{3.9416346196365347`*^9, 3.941634621782449*^9}, {
+  3.941634676338107*^9, 
+  3.9416346868684387`*^9}},ExpressionUUID->"19af1f05-059a-42f9-9fc8-\
+49deeb41d87d"],
+
+Cell[BoxData[
+ RowBox[{"SP", "[", 
+  RowBox[{"f", ",", "p"}], "]"}]], "Output",
+ CellChangeTimes->{3.941634622074107*^9},
+ CellLabel->"Out[4]=",ExpressionUUID->"cde8eb20-3a7a-4fde-b4ba-54b3e35ac3ee"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+},
+WindowSize->{1867.5, 1032},
+WindowMargins->{{Automatic, 0}, {0, Automatic}},
+FrontEndVersion->"13.3 for Linux x86 (64-bit) (July 24, 2023)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"3b00470a-04ad-419e-8fb0-aaa2f6f9407f"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 136, 3, 69, "Chapter",ExpressionUUID->"1f079ffc-0dd7-4a8b-aa30-19e2069d0da0"],
+Cell[CellGroupData[{
+Cell[741, 29, 140, 3, 67, "Section",ExpressionUUID->"5f034c24-97b0-4fea-b8b6-4110bd315cb3"],
+Cell[CellGroupData[{
+Cell[906, 36, 158, 3, 45, "Input",ExpressionUUID->"0e701859-02c1-40dc-bc0b-59b72f6ff987",
+ InitializationCell->True],
+Cell[CellGroupData[{
+Cell[1089, 43, 3627, 96, 30, "Print",ExpressionUUID->"6f4e64a1-cdf0-4fd0-ba49-a2012b018588"],
+Cell[4719, 141, 334, 7, 26, "Print",ExpressionUUID->"6c9c6f1b-8769-4b7d-841d-f2cacd229b8c"],
+Cell[5056, 150, 378, 9, 26, "Print",ExpressionUUID->"47dda56e-11ac-4b4a-ab62-6fe7ae7d7ee3"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[5507, 167, 169, 3, 69, "Chapter",ExpressionUUID->"829a86e2-479e-4171-bff3-ccbc479cce33"],
+Cell[CellGroupData[{
+Cell[5701, 174, 171, 3, 67, "Section",ExpressionUUID->"1c9e407a-c81f-489b-8ef9-de04476ef164"],
+Cell[CellGroupData[{
+Cell[5897, 181, 198, 3, 29, "Input",ExpressionUUID->"5446f91e-4949-44f8-858b-f0db59de37f6"],
+Cell[6098, 186, 33785, 765, 227, "Output",ExpressionUUID->"37805ae6-1bdc-420d-bb3d-7cf2d5104afa"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[39920, 956, 237, 4, 29, "Input",ExpressionUUID->"547f4f88-eabc-482a-901b-a26fd512f782"],
+Cell[40160, 962, 191, 3, 33, "Output",ExpressionUUID->"5b324e4e-2e78-40c0-a5b0-56eed1e3480a"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[40388, 970, 305, 6, 29, "Input",ExpressionUUID->"1a2a8fe3-e318-4ead-a2e3-3919fbb4010c"],
+Cell[40696, 978, 152, 2, 33, "Output",ExpressionUUID->"42c9d911-629e-4606-af3a-a01ecc81c948"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[40885, 985, 320, 6, 29, "Input",ExpressionUUID->"e35d47ee-98af-4790-bf24-110031d8a43c"],
+Cell[41208, 993, 402, 9, 33, "Output",ExpressionUUID->"cc3c652f-8eb5-42c5-a4d2-7acb6a1ba775"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[41647, 1007, 237, 4, 29, "Input",ExpressionUUID->"08550712-e8fe-4d71-b338-d611dbc60d82"],
+Cell[41887, 1013, 238, 4, 33, "Output",ExpressionUUID->"7cfc69a9-7d50-4919-ae4c-c40bf3817fce"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[42162, 1022, 362, 8, 29, "Input",ExpressionUUID->"9773a161-0c32-4d29-afe7-c4887967636a"],
+Cell[42527, 1032, 173, 2, 33, "Output",ExpressionUUID->"a715bfbe-c1a8-4456-839a-1ff088c4a42c"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[42737, 1039, 571, 12, 76, "Input",ExpressionUUID->"de92fcba-fa38-4838-9272-87c851a40b4e"],
+Cell[43311, 1053, 266, 5, 33, "Output",ExpressionUUID->"04c84a09-e7fd-4956-98ea-e64ff58e573e"],
+Cell[43580, 1060, 262, 4, 33, "Output",ExpressionUUID->"be2da8d4-9d28-4892-8c56-b6ef9d028ff4"],
+Cell[43845, 1066, 261, 4, 33, "Output",ExpressionUUID->"2be737f4-8a2d-4bf5-9c7b-73308f3db9fd"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[44143, 1075, 624, 15, 70, "Input",ExpressionUUID->"8dc2cc6e-8af8-4452-ba87-e2b8bbdedb97"],
+Cell[44770, 1092, 269, 4, 33, "Output",ExpressionUUID->"28f85902-25ef-47fd-99ad-f9d16d9dd6a8"],
+Cell[45042, 1098, 273, 4, 33, "Output",ExpressionUUID->"beb05098-18d2-4f91-a459-9d2483c83bd1"],
+Cell[45318, 1104, 274, 4, 33, "Output",ExpressionUUID->"212041bb-b7a1-46a9-b90d-3e3437467184"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[45629, 1113, 229, 5, 29, "Input",ExpressionUUID->"19af1f05-059a-42f9-9fc8-49deeb41d87d"],
+Cell[45861, 1120, 199, 4, 33, "Output",ExpressionUUID->"cde8eb20-3a7a-4fde-b4ba-54b3e35ac3ee"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
+
