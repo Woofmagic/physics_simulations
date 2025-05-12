@@ -1,6 +1,3 @@
-import numpy as np
-import matplotlib.pyplot as plt
-
 from matplotlib.pyplot import Axes, rc_context
 
 class PlotCustomizer:
@@ -144,116 +141,75 @@ class PlotCustomizer:
             if label:
                 self.axes_object.legend()
 
-def initialize_magnetic_spins(number_of_spins):
+    def add_errorbar_plot(
+            self,
+            x_data,
+            y_data,
+            y_errorbars,
+            x_errorbars,
+            label: str = "",
+            color = 'black',
+            marker = 'o'):
+        """
+        Add a scatter plot with errorbars to the Axes object.
 
-    if number_of_spins <= 0:
-        raise ValueError("N must be a positive integer.")
-    
-    spins = np.random.choice([-1, 1], size = number_of_spins)
+        Parameters
+        ----------
+        x_data: array_like
+            
+        y_data: array_like
 
-    return spins
+        x_errorbars: array_like
+            
+        y_errorbars: array_like
 
-def compute_total_energy(state_of_magnetic_spins):
+        label: str
 
-    hamiltonian_energy_scale = 1.0
-    hamiltonian_external_field = 0.0
+        color: str |
 
-    state_of_magnetic_spins = np.asarray(state_of_magnetic_spins)
+        marker: str
+        """
 
-    hamiltonian_energy = -hamiltonian_energy_scale * np.sum(state_of_magnetic_spins * np.roll(state_of_magnetic_spins, -1)) - hamiltonian_external_field * np.sum(state_of_magnetic_spins)
+        with rc_context(rc = self._custom_rc_params):
 
-    return hamiltonian_energy
+            # (1): Add the errorbar plot:
+            self.axes_object.errorbar(
+                x = x_data,
+                y = y_data, 
+                yerr = y_errorbars,
+                xerr = x_errorbars,
+                label = label,
+                color = color,
+                marker = marker,
+                linestyle = '', 
+                markersize = 1.0,
+                ecolor = 'black',
+                elinewidth = 0.5,
+                capsize = 1)
 
-def compute_total_magnetization(state_of_magnetic_spins):
+            if label:
+                self.axes_object.legend()
 
-    magnetization = np.sum(state_of_magnetic_spins)
+    def add_bar_plot(self, x_positions, y_data_heights, label = "", color = None):
 
-    return magnetization
+        with rc_context(rc = self._custom_rc_params):
 
-def compute_boltzmann_probability(heat_bath_temperature_in_kelvin, energy_in_joules):
-    return np.exp(-energy_in_joules / (heat_bath_temperature_in_kelvin))
+            # (1): Add the bar plot:
+            self.axes_object.bar(x_positions, y_data_heights, label = label, color = color)
 
-def markov_chain_monte_carlo_thermal_evolution(state_of_variables, temperature = 1.4):
-    _NUMBER_OF_ITERATIONS = 1000
+            if label:
+                self.axes_object.legend()
 
-    simulation_energies = []
-    simulation_magnetizations = []
+    def add_3d_scatter_plot(self, x_data, y_data, z_data, color = None, marker = 'o'):
 
-    for _ in range(_NUMBER_OF_ITERATIONS):
+        with rc_context(rc = self._custom_rc_params):
 
-        randomly_chosen_spin_index = int(np.floor(len(state_of_variables) * np.random.random()))
-        print(f"> Chosen to flip spin #{randomly_chosen_spin_index + 1}")
+            # (1): Plot points in R3:
+            self.axes_object.scatter(x_data, y_data, z_data, color = color, marker = marker)
 
-        current_energy = compute_total_energy(state_of_variables)
-        print(f"> Total energy is: {current_energy}")
+    def add_surface_plot(self, X, Y, Z, colormap: str ='viridis'):
 
-        current_magnetization = compute_total_magnetization(state_of_variables)
-        print(f"> Total magnetization is: {current_magnetization}")
+        with rc_context(rc = self._custom_rc_params):
 
-        simulation_energies.append(current_energy)
-        simulation_magnetizations.append(current_magnetization)
-
-        state_of_variables[randomly_chosen_spin_index] *= -1
-        print(f"> Spin flipped: {state_of_variables}")
-
-        new_energy_after_spin_flip = compute_total_energy(state_of_variables)
-        print(f"> Total energy changed to: {new_energy_after_spin_flip}")
-
-        energy_difference = new_energy_after_spin_flip - current_energy
-        print(f"> Energy difference computed as: {energy_difference}")
-
-        if energy_difference > 0:
-
-            monte_carlo_probability = compute_boltzmann_probability(temperature, energy_difference)
-
-            if np.random.uniform() >= monte_carlo_probability:
-
-                state_of_variables[randomly_chosen_spin_index] *= -1
-                print("> Spin flip rejected")
-
-    average_energy_per_simulation = np.mean(simulation_energies)
-    average_magnetization_per_simulation = np.mean(simulation_magnetizations)
-    print(f"> Simulation average energy was {average_energy_per_simulation} at temperature {temperature}")
-
-    return np.array(average_energy_per_simulation), np.array(average_magnetization_per_simulation)
-
-
-np.random.seed(42)
-_NUMBER_OF_SPINS = 100
-ising_spin_state = initialize_magnetic_spins(_NUMBER_OF_SPINS)
-
-print(ising_spin_state)
-print(compute_total_energy(ising_spin_state))
-print(compute_total_magnetization(ising_spin_state))
-
-temperature_values = np.linspace(0.1, 5.0, 100)
-
-average_energy_per_temperature = []
-average_energy_density_per_temperature = []
-average_magnetization_per_temperature = []
-
-for temperature in temperature_values:
-    average_energy_for_given_temperature, average_magnetization_for_given_temperature = markov_chain_monte_carlo_thermal_evolution(ising_spin_state, temperature = temperature)
-
-    average_energy_per_temperature.append(average_energy_for_given_temperature)
-    average_magnetization_per_temperature.append(average_magnetization_for_given_temperature)
-
-energy_plot_figure = plt.figure(figsize = (13.5, 10))
-
-energy_plot_axes = energy_plot_figure.add_subplot(1, 1, 1)
-
-energy_plot = PlotCustomizer(
-    energy_plot_axes,
-    title = r"1D Ising Chain",
-    xlabel = r"$T$",
-    ylabel = r"$E$",
-    grid = True)
-
-energy_plot.add_scatter_plot(
-    x_data = temperature_values,
-    y_data = average_energy_per_temperature,
-    radial_size = 5.,
-    color = 'red'
-)
-
-plt.show()
+            # (1): Plot as surface in R3:
+            self.axes_object.plot_surface(X, Y, Z, cmap = colormap, antialiased=False)
